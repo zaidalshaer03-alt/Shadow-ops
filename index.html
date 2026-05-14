@@ -678,7 +678,7 @@ body {
     box-shadow: 0 0 15px rgba(255,0,0,0.3);
 }
 
-/* ─ INVENTORY UI ─ */
+/* ─ INVENTORY UI - SEPARATE MODAL WINDOW ─ */
 #inventory-ui {
     display: none;
     position: fixed;
@@ -745,7 +745,7 @@ body {
 }
 
 .inventory-item {
-    min-width: 180px;
+    min-width: 190px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(100, 180, 255, 0.3);
     padding: 12px;
@@ -770,19 +770,20 @@ body {
 .inventory-item-desc {
     font-size: 10px;
     color: #aaa;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .inventory-item-ammo {
     font-size: 11px;
     color: #ffd700;
     margin-bottom: 8px;
+    font-weight: bold;
 }
 
 .inventory-item-btn {
     background: linear-gradient(135deg, #6af, #48a);
-    color: #000;
-    border: none;    padding: 8px 16px;
+    color: #000;    border: none;
+    padding: 8px 16px;
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
@@ -805,7 +806,7 @@ body {
 }
 
 .inventory-merc-item {
-    min-width: 160px;
+    min-width: 170px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(0, 255, 100, 0.3);
     padding: 12px;
@@ -829,8 +830,15 @@ body {
 .inventory-merc-desc {
     font-size: 10px;
     color: #aaa;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
+.inventory-merc-health {
+    font-size: 11px;
+    color: #00ff88;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
 .inventory-merc-btn {
     background: linear-gradient(135deg, #0f8, #0a0);
     color: #000;
@@ -872,15 +880,15 @@ body {
     inset: 0;
     background: linear-gradient(135deg, #050510, #0a1525, #050510);
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column;    align-items: center;
     justify-content: center;
     z-index: 100;
 }
 
 #menu h1 {
     font-size: 56px;
-    font-weight: 900;    letter-spacing: 8px;
+    font-weight: 900;
+    letter-spacing: 8px;
     color: #fff;
     text-shadow: 0 0 30px rgba(0, 200, 255, 0.7), 0 0 70px rgba(0, 200, 255, 0.3);
     margin-bottom: 8px;
@@ -921,7 +929,6 @@ body {
     line-height: 2;
     padding: 0 24px;
 }
-
 /* ─ NOTIFICATIONS ─ */
 #wave-notif {
     position: fixed;
@@ -929,7 +936,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 40px;
-    font-weight: 900;    color: #fff;
+    font-weight: 900;
+    color: #fff;
     letter-spacing: 8px;
     text-shadow: 0 0 30px rgba(0, 200, 255, 0.9);
     opacity: 0;
@@ -971,14 +979,14 @@ body {
     margin-top: 8px;
     letter-spacing: 4px;
 }
-
 #retry-btn {
     margin-top: 40px;
     padding: 16px 48px;
     background: transparent;
     border: 2px solid rgba(255, 50, 50, 0.6);
     color: #f33;
-    font-size: 15px;    letter-spacing: 6px;
+    font-size: 15px;
+    letter-spacing: 6px;
     cursor: pointer;
     border-radius: 4px;
     font-family: 'Courier New', monospace;
@@ -1019,7 +1027,6 @@ body {
     z-index: 45;
     transition: all 0.3s;
 }
-
 #achievement-popup {
     position: fixed;
     top: 20px;
@@ -1027,7 +1034,8 @@ body {
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.9);
     border: 1px solid #ffd700;
-    color: #ffd700;    padding: 12px 24px;
+    color: #ffd700;
+    padding: 12px 24px;
     border-radius: 8px;
     font-size: 15px;
     opacity: 0;
@@ -1068,15 +1076,15 @@ body {
     transition: opacity 2s;
 }
 
-#storm-flash {
-    position: fixed;
+#storm-flash {    position: fixed;
     inset: 0;
     background: rgba(255,255,255,0.15);
     pointer-events: none;
     z-index: 21;
     opacity: 0;
     transition: opacity 0.1s;
-}</style>
+}
+</style>
 </head>
 <body>
 
@@ -1117,15 +1125,15 @@ body {
             </div>
         </div>
         
-        <!-- TAB 2: دائم -->
-        <div id="tab-permanent" class="shop-tab-content">
+        <!-- TAB 2: دائم -->        <div id="tab-permanent" class="shop-tab-content">
             <div class="shop-item">
                 <div class="shop-item-info">
                     <div class="shop-item-name">🔧 تحسين الحركة</div>
                     <div class="shop-item-desc">زيادة دائمة في سرعة الحركة بنسبة 35%</div>
                     <div class="shop-item-price">💰 300 نقطة | دائم</div>
                 </div>
-                <button class="shop-item-btn" onclick="buyMovementFix()">تفعيل</button>            </div>
+                <button class="shop-item-btn" onclick="buyMovementFix()">تفعيل</button>
+            </div>
             
             <div class="shop-item">
                 <div class="shop-item-info">
@@ -1166,15 +1174,15 @@ body {
                 <button class="shop-item-btn" id="btn-smg" onclick="buyOrEquipWeapon('smg')">شراء</button>
             </div>
             
-            <div class="shop-item">
-                <div class="shop-item-info">
+            <div class="shop-item">                <div class="shop-item-info">
                     <div class="shop-item-name">🔫 AK-117</div>
                     <div class="shop-item-desc">معدل إطلاق عالي، دقة جيدة | ضرر: 32 | ذخيرة: 40/200</div>
                     <div class="shop-item-price">💰 8500 نقطة</div>
                 </div>
                 <button class="shop-item-btn" id="btn-ak117" onclick="buyOrEquipWeapon('ak117')">شراء</button>
             </div>
-                        <div class="shop-item">
+            
+            <div class="shop-item">
                 <div class="shop-item-info">
                     <div class="shop-item-name">🔫 AK-47</div>
                     <div class="shop-item-desc">إطلاق آلي عند الضغط المطول | ضرر: 45 | ذخيرة: 30/150</div>
@@ -1215,15 +1223,15 @@ body {
             
             <div class="shop-item" style="padding: 10px; margin-bottom: 8px;">
                 <div class="shop-item-info">
-                    <div class="shop-item-name">ذخيرة مسدس سريع</div>
-                    <div class="shop-item-desc">+50 طلقة احتياطية</div>
+                    <div class="shop-item-name">ذخيرة مسدس سريع</div>                    <div class="shop-item-desc">+50 طلقة احتياطية</div>
                     <div class="shop-item-price">💰 250 نقطة</div>
                 </div>
                 <button class="shop-item-btn" onclick="buyWeaponAmmo('smg')">شراء</button>
             </div>
             
             <div class="shop-item" style="padding: 10px; margin-bottom: 8px;">
-                <div class="shop-item-info">                    <div class="shop-item-name">ذخيرة AK-117</div>
+                <div class="shop-item-info">
+                    <div class="shop-item-name">ذخيرة AK-117</div>
                     <div class="shop-item-desc">+40 طلقة احتياطية</div>
                     <div class="shop-item-price">💰 350 نقطة</div>
                 </div>
@@ -1264,8 +1272,7 @@ body {
                 <div class="shop-item-info">
                     <div class="shop-item-name">👑 مرتزق النخبة (Elite)</div>
                     <div class="shop-item-desc">لون أخضر غامق، صحة: 300+الموجة×25، ضرر: 60-85، يقهر 5 أعداء لوحده!</div>
-                    <div class="shop-item-price">💰 2500 نقطة | للقتال الدائم</div>
-                </div>
+                    <div class="shop-item-price">💰 2500 نقطة | للقتال الدائم</div>                </div>
                 <button class="shop-item-btn" onclick="buyEliteMercenary()">شراء</button>
             </div>
         </div>
@@ -1273,6 +1280,8 @@ body {
         <button class="shop-close" onclick="closeShop()">❌ العودة للقتال</button>
     </div>
 </div>
+
+<!-- ─ INVENTORY UI - SEPARATE MODAL ─ -->
 <div id="inventory-ui">
     <div class="inventory-container">
         <h2>🎒 المخزون الشخصي</h2>
@@ -1313,7 +1322,6 @@ body {
     <div class="go-s">الموجة: <span id="go-wave">1</span></div>
     <button id="retry-btn" onclick="retryGame()">↺ إعادة المحاولة</button>
 </div>
-
 <div id="wave-notif"></div>
 <div id="power-up-ui">🔥 DAMAGE BOOST ACTIVE 🔥</div>
 
@@ -1321,7 +1329,8 @@ body {
 <canvas id="rain-canvas"></canvas>
 <div id="fog-overlay"></div>
 <div id="storm-flash"></div>
-<div id="vignette"></div><div id="dmg-flash"></div>
+<div id="vignette"></div>
+<div id="dmg-flash"></div>
 <div id="fire-flash"></div>
 
 <div id="hud">
@@ -1361,8 +1370,7 @@ body {
 
 <div id="joy-area">
     <div id="joy-ring"><div id="joy-knob"></div></div>
-</div>
-<div id="look-area"></div>
+</div><div id="look-area"></div>
 
 <button id="fire-btn">🔥</button>
 <button id="reload-btn">↺</button>
@@ -1370,7 +1378,8 @@ body {
 <button id="mercenary-btn" onclick="deployMercenary()">👥 0</button>
 <button id="auto-btn" onclick="toggleAuto()">AUTO OFF</button>
 
-<svg id="weapon" viewBox="0 0 230 150" xmlns="http://www.w3.org/2000/svg">    <defs>
+<svg id="weapon" viewBox="0 0 230 150" xmlns="http://www.w3.org/2000/svg">
+    <defs>
         <linearGradient id="gunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
             <stop offset="100%" style="stop-color:#111;stop-opacity:1" />
@@ -1410,8 +1419,7 @@ const camera = new THREE.PerspectiveCamera(72, window.innerWidth / window.innerH
 camera.position.set(0, 1.8, 0);
 
 // متغيرات فيزياء الحركة الاحترافية
-let pVelX = 0, pVelZ = 0;
-const FRICTION = 0.82; 
+let pVelX = 0, pVelZ = 0;const FRICTION = 0.82; 
 
 let shake = 0;
 let swayX = 0, swayY = 0;
@@ -1419,7 +1427,8 @@ let swayX = 0, swayY = 0;
 const viewDir = new THREE.Vector3();
 const sideDir = new THREE.Vector3();
 
-// ─ AUTO FIRE STATE ─let isFiring = false;
+// ─ AUTO FIRE STATE ─
+let isFiring = false;
 let autoFireInterval = null;
 
 // ─ AUDIO ─
@@ -1460,7 +1469,6 @@ sun.shadow.camera.bottom = -40;
 sun.shadow.camera.far = 120;
 sun.shadow.bias = -0.0001;
 scene.add(sun);
-
 const pl1 = new THREE.PointLight(0xff4400, 4.0, 25);
 pl1.position.set(8, 4, 8);
 scene.add(pl1);
@@ -1468,6 +1476,7 @@ scene.add(pl1);
 const pl2 = new THREE.PointLight(0x3366ff, 4.0, 25);
 pl2.position.set(-8, 4, -8);
 scene.add(pl2);
+
 const pl3 = new THREE.PointLight(0x00ff88, 2.0, 20);
 pl3.position.set(0, 3, 15);
 scene.add(pl3);
@@ -1508,8 +1517,7 @@ function box(w, h, d, x, y, z, c = 0x1a1a2a) {
     m.castShadow = true;
     m.receiveShadow = true;
     scene.add(m);
-    return m;
-}
+    return m;}
 
 box(AR * 2, WH, 1.5, 0, WH / 2, -AR);
 box(AR * 2, WH, 1.5, 0, WH / 2, AR);
@@ -1517,7 +1525,8 @@ box(1.5, WH, AR * 2, -AR, WH / 2, 0);
 box(1.5, WH, AR * 2, AR, WH / 2, 0);
 
 [
-    [-22, -22], [22, -22], [-22, 22], [22, 22],    [-22, 0], [22, 0], [0, -22], [0, 22],
+    [-22, -22], [22, -22], [-22, 22], [22, 22],
+    [-22, 0], [22, 0], [0, -22], [0, 22],
     [-15, 15], [15, -15], [-15, -15], [15, 15]
 ].forEach(([x, z]) => {
     const pillar = new THREE.Mesh(
@@ -1557,8 +1566,7 @@ function updateParts() {
     for (let i = parts.length - 1; i >= 0; i--) {
         const p = parts[i];
         p.vel.y -= 0.02;
-        p.mesh.position.add(p.vel);
-        p.life -= 0.05;
+        p.mesh.position.add(p.vel);        p.life -= 0.05;
         p.mesh.material.opacity = Math.max(0, p.life);
         if (p.life <= 0) {
             scene.remove(p.mesh);
@@ -1566,23 +1574,58 @@ function updateParts() {
         }
     }
 }
-// ─ WEAPONS SYSTEM ─
+
+// ─ WEAPONS SYSTEM WITH PER-WEAPON AMMO TRACKING ─
 const weapons = {
-    'pistol': { name: 'مسدس أساسي', damage: 22, fireRate: 7, clipSize: 30, reserve: 120, price: 0, owned: true, autoFire: false, ammoPrice: 200, color: 0xffaa00 },
-    'shotgun': { name: 'شوتجان', damage: 85, fireRate: 35, clipSize: 8, reserve: 32, price: 3000, owned: false, autoFire: false, ammoPrice: 400, color: 0xff4444 },
-    'ak47': { name: 'AK-47', damage: 45, fireRate: 12, clipSize: 30, reserve: 150, price: 12000, owned: false, autoFire: true, ammoPrice: 300, color: 0x4488ff, waveLock: 10 },
-    'ak117': { name: 'AK-117', damage: 32, fireRate: 5, clipSize: 40, reserve: 200, price: 8500, owned: false, autoFire: false, ammoPrice: 350, color: 0x8844ff },
-    'smg': { name: 'مسدس سريع', damage: 18, fireRate: 3, clipSize: 50, reserve: 250, price: 3200, owned: false, autoFire: true, ammoPrice: 250, color: 0x44ff88 },
-    'm4a1': { name: 'رشاش آلي', damage: 38, fireRate: 8, clipSize: 35, reserve: 175, price: 15000, owned: false, autoFire: true, ammoPrice: 320, color: 0x8888ff, waveLock: 10 }
+    'pistol': { 
+        name: 'مسدس أساسي', damage: 22, fireRate: 7, clipSize: 30, reserve: 120, price: 0, owned: true, autoFire: false, ammoPrice: 200, color: 0xffaa00,
+        currentClip: 30, reserveAmmo: 120
+    },
+    'shotgun': { 
+        name: 'شوتجان', damage: 85, fireRate: 35, clipSize: 8, reserve: 32, price: 3000, owned: false, autoFire: false, ammoPrice: 400, color: 0xff4444,
+        currentClip: 8, reserveAmmo: 32
+    },
+    'ak47': { 
+        name: 'AK-47', damage: 45, fireRate: 12, clipSize: 30, reserve: 150, price: 12000, owned: false, autoFire: true, ammoPrice: 300, color: 0x4488ff, waveLock: 10,
+        currentClip: 30, reserveAmmo: 150
+    },
+    'ak117': { 
+        name: 'AK-117', damage: 32, fireRate: 5, clipSize: 40, reserve: 200, price: 8500, owned: false, autoFire: false, ammoPrice: 350, color: 0x8844ff,
+        currentClip: 40, reserveAmmo: 200
+    },
+    'smg': { 
+        name: 'مسدس سريع', damage: 18, fireRate: 3, clipSize: 50, reserve: 250, price: 3200, owned: false, autoFire: true, ammoPrice: 250, color: 0x44ff88,
+        currentClip: 50, reserveAmmo: 250
+    },
+    'm4a1': { 
+        name: 'رشاش آلي', damage: 38, fireRate: 8, clipSize: 35, reserve: 175, price: 15000, owned: false, autoFire: true, ammoPrice: 320, color: 0x8888ff, waveLock: 10,
+        currentClip: 35, reserveAmmo: 175
+    }
 };
 let currentWeapon = 'pistol';
 
+function saveCurrentWeaponAmmo() {
+    if (weapons[currentWeapon]) {
+        weapons[currentWeapon].currentClip = gs.ammo;
+        weapons[currentWeapon].reserveAmmo = gs.reserve;
+    }
+}
+
+function loadWeaponAmmo(weaponKey) {
+    if (weapons[weaponKey]) {
+        gs.ammo = weapons[weaponKey].currentClip;
+        gs.maxAmmo = weapons[weaponKey].clipSize;
+        gs.reserve = weapons[weaponKey].reserveAmmo;    }
+}
+
 function equipWeapon(weaponKey) {
     if (!weapons[weaponKey].owned) return;
+    
+    // حفظ سلاح الحالي قبل التبديل
+    saveCurrentWeaponAmmo();
+    
     currentWeapon = weaponKey;
-    gs.ammo = weapons[weaponKey].clipSize;
-    gs.maxAmmo = weapons[weaponKey].clipSize;
-    gs.reserve = weapons[weaponKey].reserve;
+    loadWeaponAmmo(weaponKey);
     gs.cd = 0;
     updateAmmoUI();
     updateInventoryUI();
@@ -1615,13 +1658,13 @@ function buyWeapon(weaponKey) {
         updateScoreUI();
         equipWeapon(weaponKey);
         document.getElementById(`btn-${weaponKey}`).textContent = '✓ مملوك';
-        document.getElementById(`btn-${weaponKey}`).disabled = true;        beep('sine', 900, 0.3, 0.4);
+        document.getElementById(`btn-${weaponKey}`).disabled = true;
+        beep('sine', 900, 0.3, 0.4);
         showKillstreak(`🔫 تم شراء ${weapon.name}!`);
         updateInventoryUI();
     } else if (weapon.owned) {
         equipWeapon(weaponKey);
-    } else {
-        beep('sawtooth', 150, 0.2);
+    } else {        beep('sawtooth', 150, 0.2);
     }
 }
 
@@ -1629,9 +1672,9 @@ function buyWeaponAmmo(weaponKey) {
     const weapon = weapons[weaponKey];
     if (gs.score >= weapon.ammoPrice) {
         gs.score -= weapon.ammoPrice;
-        weapon.reserve += weapon.clipSize;
+        weapon.reserveAmmo += weapon.clipSize;
         if (weaponKey === currentWeapon) {
-            gs.reserve = weapon.reserve;
+            gs.reserve = weapon.reserveAmmo;
             updateAmmoUI();
         }
         updateScoreUI();
@@ -1643,7 +1686,7 @@ function buyWeaponAmmo(weaponKey) {
     }
 }
 
-// ─ INVENTORY SYSTEM ─
+// ─ INVENTORY SYSTEM - SEPARATE MODAL ─
 function openInventory() {
     if (!gs.running) return;
     gs.running = false;
@@ -1657,19 +1700,22 @@ function closeInventory() {
 }
 
 function updateInventoryUI() {
-    // تحديث قسم الأسلحة
+    // تحديث قسم الأسلحة - إظهار الذخيرة الباقية الفعلية
     const weaponsContainer = document.getElementById('inventory-weapons');
     weaponsContainer.innerHTML = '';
     
     Object.keys(weapons).forEach(key => {
         const w = weapons[key];
         if (!w.owned) return;
-                const item = document.createElement('div');
+        
+        // حساب إجمالي الذخيرة المتبقية: المخزن + الاحتياطي
+        const totalAmmo = w.currentClip + w.reserveAmmo;
+        
+        const item = document.createElement('div');
         item.className = 'inventory-item';
-        item.innerHTML = `
-            <div class="inventory-item-name">${w.name}</div>
+        item.innerHTML = `            <div class="inventory-item-name">${w.name}</div>
             <div class="inventory-item-desc">ضرر: ${w.damage} | إطلاق: ${w.autoFire ? 'آلي' : 'فردي'}</div>
-            <div class="inventory-item-ammo">📦 ${w.reserve} احتياطي</div>
+            <div class="inventory-item-ammo">📦 ${totalAmmo} طلقة متبقية</div>
             <button class="inventory-item-btn" onclick="equipWeapon('${key}')" ${currentWeapon === key ? 'disabled' : ''}>
                 ${currentWeapon === key ? '✓ مُفعّل' : 'تفعيل'}
             </button>
@@ -1677,17 +1723,19 @@ function updateInventoryUI() {
         weaponsContainer.appendChild(item);
     });
     
-    // تحديث قسم المرتزقة
+    // تحديث قسم المرتزقة - إظهار الصحة المتبقية المتوقعة
     const mercsContainer = document.getElementById('inventory-mercenaries');
     mercsContainer.innerHTML = '';
     
     if (gs.mercenariesInventory > 0) {
         for (let i = 0; i < gs.mercenariesInventory; i++) {
+            const projectedHp = 80 + gs.wave * 12;
             const item = document.createElement('div');
             item.className = 'inventory-merc-item';
             item.innerHTML = `
                 <div class="inventory-merc-name">👥 مرتزق عادي</div>
-                <div class="inventory-merc-desc">صحة: 80+ | ضرر: 22-30</div>
+                <div class="inventory-merc-desc">ضرر: 22-30</div>
+                <div class="inventory-merc-health">❤️ صحة متوقعة: ${projectedHp}</div>
                 <button class="inventory-merc-btn" onclick="deployFromInventory('normal')">استدعاء</button>
             `;
             mercsContainer.appendChild(item);
@@ -1696,11 +1744,13 @@ function updateInventoryUI() {
     
     if (gs.eliteMercenariesInventory > 0) {
         for (let i = 0; i < gs.eliteMercenariesInventory; i++) {
+            const projectedHp = 300 + gs.wave * 25;
             const item = document.createElement('div');
             item.className = 'inventory-merc-item';
             item.innerHTML = `
                 <div class="inventory-merc-name">👑 مرتزق نخبة</div>
-                <div class="inventory-merc-desc">صحة: 300+ | ضرر: 60-85</div>
+                <div class="inventory-merc-desc">ضرر: 60-85</div>
+                <div class="inventory-merc-health">❤️ صحة متوقعة: ${projectedHp}</div>
                 <button class="inventory-merc-btn" onclick="deployFromInventory('elite')">استدعاء</button>
             `;
             mercsContainer.appendChild(item);
@@ -1712,8 +1762,8 @@ function updateInventoryUI() {
     }
 }
 
-function deployFromInventory(type) {
-    if (!gs.running) return;    
+function deployFromInventory(type) {    if (!gs.running) return;
+    
     if (type === 'normal' && gs.mercenariesInventory > 0) {
         gs.mercenariesInventory--;
         createMercenary(false);
@@ -1761,8 +1811,8 @@ function mkEnemy(x, z, wave) {
     const head = new THREE.Mesh(headGeo, headMat);
     head.position.y = 2.0;
     head.castShadow = true;
-    g.add(head);
-        [-0.35, 0.35].forEach(sx => {
+    g.add(head);    
+    [-0.35, 0.35].forEach(sx => {
         const shoulder = new THREE.Mesh(
             new THREE.BoxGeometry(0.25, 0.2, 0.25),
             new THREE.MeshStandardMaterial({ color: 0x771111, roughness: 0.5, metalness: 0.4 })
@@ -1810,8 +1860,8 @@ function mkEnemy(x, z, wave) {
         new THREE.PlaneGeometry(0.8, 0.08),
         new THREE.MeshBasicMaterial({ color: 0x00ff44 })
     );
-    fgB.position.set(0, 2.6, 0.01);
-    g.add(fgB);    
+    fgB.position.set(0, 2.6, 0.01);    g.add(fgB);
+    
     const armor = new THREE.Mesh(
         new THREE.BoxGeometry(0.5, 0.6, 0.1),
         new THREE.MeshStandardMaterial({ color: 0x440000, roughness: 0.6, metalness: 0.6 })
@@ -1859,8 +1909,8 @@ function createMercenary(isElite = false) {
     head.castShadow = true;
     g.add(head);
     
-    const helmet = new THREE.Mesh(
-        new THREE.SphereGeometry(0.3, 8, 6, 0, Math.PI*2, 0, Math.PI/2),        new THREE.MeshStandardMaterial({ color: helmetColor, roughness: 0.3, metalness: 0.7 })
+    const helmet = new THREE.Mesh(        new THREE.SphereGeometry(0.3, 8, 6, 0, Math.PI*2, 0, Math.PI/2),
+        new THREE.MeshStandardMaterial({ color: helmetColor, roughness: 0.3, metalness: 0.7 })
     );
     helmet.position.y = 1.9;
     g.add(helmet);
@@ -1908,8 +1958,8 @@ function createMercenary(isElite = false) {
     
     const spawnPos = camera.position.clone();
     spawnPos.x += (Math.random() - 0.5) * 5;
-    spawnPos.z += (Math.random() - 0.5) * 5;
-    spawnPos.y = 0;    g.position.copy(spawnPos);
+    spawnPos.z += (Math.random() - 0.5) * 5;    spawnPos.y = 0;
+    g.position.copy(spawnPos);
     
     scene.add(g);
     
@@ -1957,8 +2007,8 @@ function updateAllyBullets() {
         for (let j = 0; j < enemies.length; j++) {
             const en = enemies[j];
             if (!en.alive) continue;
-            if (b.mesh.position.distanceTo(en.g.position) < 1.2) {
-                const dmg = b.isElite ?                     (b.damage.min + Math.random() * (b.damage.max - b.damage.min)) :
+            if (b.mesh.position.distanceTo(en.g.position) < 1.2) {                const dmg = b.isElite ? 
+                    (b.damage.min + Math.random() * (b.damage.max - b.damage.min)) :
                     (22 + Math.random() * 8);
                 en.hp -= dmg;
                 en.hit = 6;
@@ -2006,8 +2056,8 @@ function updateMercenaries() {
                 closestEnemy.g.position.x - merc.g.position.x,
                 closestEnemy.g.position.z - merc.g.position.z
             );
-            
-            if (minDist > (merc.isElite ? 12 : 8)) {                const dir = closestEnemy.g.position.clone().sub(merc.g.position).normalize();
+                        if (minDist > (merc.isElite ? 12 : 8)) {
+                const dir = closestEnemy.g.position.clone().sub(merc.g.position).normalize();
                 merc.g.position.x += dir.x * (merc.isElite ? 0.025 : 0.02);
                 merc.g.position.z += dir.z * (merc.isElite ? 0.025 : 0.02);
             }
@@ -2055,8 +2105,8 @@ function deployMercenary() {
     if (gs.mercenariesInventory > 0) {
         gs.mercenariesInventory--;
         createMercenary(false);
-        beep('sine', 500, 0.2, 0.25);
-        showKillstreak('👥 مرتزق جديد في الخدمة!');    } else if (gs.eliteMercenariesInventory > 0) {
+        beep('sine', 500, 0.2, 0.25);        showKillstreak('👥 مرتزق جديد في الخدمة!');
+    } else if (gs.eliteMercenariesInventory > 0) {
         gs.eliteMercenariesInventory--;
         createMercenary(true);
         beep('sine', 600, 0.25, 0.3);
@@ -2104,8 +2154,8 @@ function switchShopTab(tabName) {
 function openShop() { if (!gs.running) return; gs.running = false; document.getElementById('shop-ui').style.display = 'flex'; switchShopTab('potions'); }
 function closeShop() { gs.running = true; document.getElementById('shop-ui').style.display = 'none'; }
 
-function buyHealth() {
-    if (gs.score >= 600) { gs.score -= 600; gs.hp = gs.maxHp; updateHpUI(); updateScoreUI(); beep('sine', 800, 0.2); showKillstreak('💚 صحة كاملة!'); } else beep('sawtooth', 150, 0.2);}
+function buyHealth() {    if (gs.score >= 600) { gs.score -= 600; gs.hp = gs.maxHp; updateHpUI(); updateScoreUI(); beep('sine', 800, 0.2); showKillstreak('💚 صحة كاملة!'); } else beep('sawtooth', 150, 0.2);
+}
 function buySpeedBoost() {
     if (gs.score >= 500) { gs.score -= 500; gs.speedBoost = true; gs.speedBoostTimer = 1200; updateScoreUI(); beep('sine', 1000, 0.3); showKillstreak('⚡ سرعة مضاعفة!'); setTimeout(() => { gs.speedBoost = false; }, 20000); } else beep('sawtooth', 150, 0.2);
 }
@@ -2140,10 +2190,20 @@ function updateScoreUI() { document.getElementById('score-num').textContent = gs
 
 function showHit() { const h = document.getElementById('hitmarker'); h.style.opacity = '1'; setTimeout(() => h.style.opacity = '0', 150); }
 function startReload() { if (gs.reloading || gs.reserve <= 0 || gs.ammo === gs.maxAmmo) return; gs.reloading = true; gs.reloadTmr = 100; const rb = document.getElementById('reload-bar'), rp = document.getElementById('reload-prog'); rb.style.display = 'block'; rp.style.width = '0%'; requestAnimationFrame(() => { rp.style.transition = 'width 1.4s linear'; rp.style.width = '100%'; }); playReload(); }
-function finishReload() { const n = gs.maxAmmo - gs.ammo, t = Math.min(n, gs.reserve); gs.ammo += t; gs.reserve -= t; gs.reloading = false; document.getElementById('reload-bar').style.display = 'none'; updateAmmoUI(); }
+function finishReload() { 
+    const weapon = weapons[currentWeapon];
+    const n = weapon.clipSize - gs.ammo;
+    const t = Math.min(n, weapon.reserveAmmo);
+    gs.ammo += t;
+    weapon.reserveAmmo -= t;
+    weapon.currentClip = gs.ammo;
+    gs.reserve = weapon.reserveAmmo;
+    gs.reloading = false;
+    document.getElementById('reload-bar').style.display = 'none';
+    updateAmmoUI();
+}
 function updateAmmoUI() { document.getElementById('ammo-main').textContent = gs.ammo; document.getElementById('ammo-res').textContent = `/ ${gs.reserve}`; }
-function updateHpUI() { const p = gs.hp / gs.maxHp * 100; const f = document.getElementById('hp-fill'), n = document.getElementById('hp-num'); f.style.width = p + '%'; if (p > 50) { f.style.background = 'linear-gradient(90deg,#00ff88,#00ffc8)'; f.style.boxShadow = '0 0 12px #00ff88'; n.style.color = '#00ff88'; } else if (p > 25) { f.style.background = 'linear-gradient(90deg,#ffaa00,#ffcc00)'; f.style.boxShadow = '0 0 10px #ffaa00'; n.style.color = '#ffaa00'; } else { f.style.background = 'linear-gradient(90deg,#ff2200,#ff6600)'; f.style.boxShadow = '0 0 10px #ff2200'; n.style.color = '#ff4'; } n.textContent = Math.ceil(gs.hp); }
-function takeDamage(d) { if (gs.armorActive) d *= 0.5; gs.hp = Math.max(0, gs.hp - d); updateHpUI(); shake = 0.18; const fl = document.getElementById('dmg-flash'); fl.style.opacity = '1'; setTimeout(() => fl.style.opacity = '0', 150); if (gs.hp <= 0) gameOver(); }
+function updateHpUI() { const p = gs.hp / gs.maxHp * 100; const f = document.getElementById('hp-fill'), n = document.getElementById('hp-num'); f.style.width = p + '%'; if (p > 50) { f.style.background = 'linear-gradient(90deg,#00ff88,#00ffc8)'; f.style.boxShadow = '0 0 12px #00ff88'; n.style.color = '#00ff88'; } else if (p > 25) { f.style.background = 'linear-gradient(90deg,#ffaa00,#ffcc00)'; f.style.boxShadow = '0 0 10px #ffaa00'; n.style.color = '#ffaa00'; } else { f.style.background = 'linear-gradient(90deg,#ff2200,#ff6600)'; f.style.boxShadow = '0 0 10px #ff2200'; n.style.color = '#ff4'; } n.textContent = Math.ceil(gs.hp); }function takeDamage(d) { if (gs.armorActive) d *= 0.5; gs.hp = Math.max(0, gs.hp - d); updateHpUI(); shake = 0.18; const fl = document.getElementById('dmg-flash'); fl.style.opacity = '1'; setTimeout(() => fl.style.opacity = '0', 150); if (gs.hp <= 0) gameOver(); }
 function gameOver() { gs.running = false; document.getElementById('go-score').textContent = gs.score.toLocaleString(); document.getElementById('go-wave').textContent = gs.wave; document.getElementById('gameover').style.display = 'flex'; }
 function nextWave() { gs.wave++; spawnWave(gs.wave); gs.hp = Math.min(gs.maxHp, gs.hp + 35); updateHpUI(); }
 function updateEnemyBar(en) { const r = Math.max(0, en.hp / en.maxHp); en.fgB.scale.x = r; en.fgB.position.x = -(1 - r) * 0.4; en.fgB.material.color.setHex(r > 0.5 ? 0x00ff44 : r > 0.25 ? 0xffaa00 : 0xff2200); }
@@ -2154,6 +2214,7 @@ function showKillstreak(text) { const el = document.getElementById('killstreak-u
 const achievements = { firstKill: { unlocked: false, title: 'أول دم', description: 'اقتل أول عدو' }, kill10: { unlocked: false, title: 'جندي متمرس', description: 'اقتل 10 أعداء' }, kill50: { unlocked: false, title: 'آلة قتل', description: 'اقتل 50 عدو' }, wave10: { unlocked: false, title: 'محارب الموجات', description: 'وصل للموجة 10' }, combo5: { unlocked: false, title: 'سفاح', description: 'احصل على 5 قتلات متتالية' } };
 function checkAchievements() { if (!achievements.firstKill.unlocked && gs.kills >= 1) unlockAchievement('firstKill'); if (!achievements.kill10.unlocked && gs.kills >= 10) unlockAchievement('kill10'); if (!achievements.kill50.unlocked && gs.kills >= 50) unlockAchievement('kill50'); if (!achievements.wave10.unlocked && gs.wave >= 10) unlockAchievement('wave10'); if (!achievements.combo5.unlocked && comboCount >= 5) unlockAchievement('combo5'); }
 function unlockAchievement(key) { achievements[key].unlocked = true; const ach = achievements[key]; const popup = document.getElementById('achievement-popup'); popup.innerHTML = `🏆 ${ach.title}<br><small>${ach.description}</small>`; popup.style.opacity = '1'; popup.style.top = '30px'; setTimeout(() => { popup.style.opacity = '0'; popup.style.top = '20px'; }, 3000); gs.score += 250; document.getElementById('score-num').textContent = gs.score.toLocaleString(); }
+
 // ─ CONTROLS ─
 const jRing = document.getElementById('joy-ring'), jKnob = document.getElementById('joy-knob');
 const joy = { active: false, id: null, sx: 0, sy: 0, dx: 0, dy: 0 };
@@ -2191,8 +2252,7 @@ function toggleAuto() { autoFire = !autoFire; const b = document.getElementById(
 
 // ─ FIRE BUTTON HANDLERS ─
 function handleFireStart(e) {
-    e.preventDefault();
-    isFiring = true;
+    e.preventDefault();    isFiring = true;
     const weapon = weapons[currentWeapon];
     
     if (weapon.autoFire) {
@@ -2204,6 +2264,7 @@ function handleFireStart(e) {
         shoot();
     }
 }
+
 function handleFireEnd(e) {
     e.preventDefault();
     isFiring = false;
@@ -2240,8 +2301,7 @@ document.addEventListener('keydown', e => {
     if (e.code === 'Digit1') equipWeapon('pistol'); 
     if (e.code === 'Digit2') equipWeapon('shotgun'); 
     if (e.code === 'Digit3') equipWeapon('ak47'); 
-    if (e.code === 'Digit4') equipWeapon('ak117'); 
-    if (e.code === 'Digit5') equipWeapon('smg'); 
+    if (e.code === 'Digit4') equipWeapon('ak117');     if (e.code === 'Digit5') equipWeapon('smg'); 
     if (e.code === 'Digit6') equipWeapon('m4a1'); 
 });
 document.addEventListener('keyup', e => { 
@@ -2252,7 +2312,8 @@ document.addEventListener('keyup', e => {
             clearInterval(autoFireInterval);
             autoFireInterval = null;
         }
-    }});
+    }
+});
 document.addEventListener('mousemove', e => { 
     if (!gs.running) return; 
     const mx = e.movementX * 0.004; 
@@ -2289,8 +2350,7 @@ function updatePlayer() {
     
     camera.position.x += pVelX;
     camera.position.z += pVelZ;
-    
-    pVelX *= FRICTION;
+        pVelX *= FRICTION;
     pVelZ *= FRICTION;
 
     const B = AR - 1.5;
@@ -2301,7 +2361,8 @@ function updatePlayer() {
     
     camera.rotation.order = 'YXZ';
     camera.rotation.y = gs.camYaw;
-    camera.rotation.x = gs.camPitch;    
+    camera.rotation.x = gs.camPitch;
+    
     if (shake > 0.001) { camera.rotation.y += (Math.random() - 0.5) * shake; camera.rotation.x += (Math.random() - 0.5) * shake; shake *= 0.88; }
     
     swayX *= 0.8; swayY *= 0.8;
@@ -2338,8 +2399,7 @@ function shootEnemyBullet(startPos, targetPos) { const bulletMesh = new THREE.Me
 function updateEnemyBullets() { for (let i = enemyBullets.length - 1; i >= 0; i--) { const b = enemyBullets[i]; b.mesh.position.addScaledVector(b.dir, b.speed); b.life--; if (b.mesh.position.distanceTo(camera.position) < 1.0) { takeDamage(4 + Math.random() * 5); scene.remove(b.mesh); enemyBullets.splice(i, 1); continue; } if (b.life <= 0) { scene.remove(b.mesh); enemyBullets.splice(i, 1); } } }
 
 const tv = new THREE.Vector3();
-function updateEnemies() { 
-    enemies.forEach(en => { 
+function updateEnemies() {     enemies.forEach(en => { 
         if (!en.alive) return; 
         
         let targetPos = camera.position.clone();
@@ -2350,7 +2410,8 @@ function updateEnemies() {
             const distToMerc = en.g.position.distanceTo(merc.g.position);
             if (distToMerc < targetDist) {
                 targetDist = distToMerc;
-                targetPos = merc.g.position.clone();            }
+                targetPos = merc.g.position.clone();
+            }
         });
         
         tv.set(targetPos.x, 0, targetPos.z); 
@@ -2387,8 +2448,7 @@ function updateEnemies() {
 function spawnWave(w) { const n = Math.min(3 + w * 2, 18); for (let i = 0; i < n; i++) { const a = (i / n) * Math.PI * 2 + Math.random() * 0.5, r = 28 - Math.random() * 5; mkEnemy(Math.cos(a) * r, Math.sin(a) * r, w); } const el = document.getElementById('wave-notif'); el.textContent = `WAVE ${w}`; el.style.opacity = '1'; setTimeout(() => el.style.opacity = '0', 2200); document.getElementById('wave-txt').textContent = `WAVE ${w}`; }
 
 // ─ ENHANCED WEATHER SYSTEM ─
-const rainCanvas = document.getElementById('rain-canvas');
-const rainCtx = rainCanvas.getContext('2d');
+const rainCanvas = document.getElementById('rain-canvas');const rainCtx = rainCanvas.getContext('2d');
 const fogOverlay = document.getElementById('fog-overlay');
 const stormFlash = document.getElementById('storm-flash');
 const rainDrops = [];
@@ -2399,6 +2459,7 @@ let weatherState = {
     stormTimer: 0,
     changeTimer: 0
 };
+
 function resizeRainCanvas() {
     rainCanvas.width = window.innerWidth;
     rainCanvas.height = window.innerHeight;
@@ -2436,8 +2497,7 @@ function updateWeather() {
         
         if (newType === 'storm') weatherState.stormTimer = 200 + Math.random() * 100;
     }
-    
-    // الانتقال التدريجي
+        // الانتقال التدريجي
     if (weatherState.transition > 0) {
         weatherState.transition--;
         weatherState.intensity = 1 - weatherState.transition / 120;
@@ -2448,7 +2508,8 @@ function updateWeather() {
     let fogOpacity = 0;
     if (weatherState.type === 'fog') {
         fogDensity = 0.035 + weatherState.intensity * 0.04;
-        fogOpacity = 0.1 + weatherState.intensity * 0.2;    } else if (weatherState.type === 'storm') {
+        fogOpacity = 0.1 + weatherState.intensity * 0.2;
+    } else if (weatherState.type === 'storm') {
         fogDensity = 0.025 + weatherState.intensity * 0.02;
         fogOpacity = 0.05 + weatherState.intensity * 0.1;
     }
@@ -2485,8 +2546,7 @@ function updateWeather() {
     
     // البرق في العواصف
     if (weatherState.type === 'storm' && weatherState.stormTimer > 0) {
-        weatherState.stormTimer--;
-        if (Math.random() < 0.008) {
+        weatherState.stormTimer--;        if (Math.random() < 0.008) {
             stormFlash.style.opacity = '1';
             setTimeout(() => { stormFlash.style.opacity = '0'; }, 80);
             shake = 0.15;
@@ -2497,7 +2557,8 @@ function updateWeather() {
     // تحديث كثافة الضباب في Three.js بناءً على الطقس
     if (weatherState.type === 'rain' || weatherState.type === 'storm') {
         scene.fog.color.setHex(0x1a2a3a);
-    } else {        scene.fog.color.setHex(0x0a0a1a);
+    } else {
+        scene.fog.color.setHex(0x0a0a1a);
     }
 }
 
@@ -2530,10 +2591,11 @@ function shoot() {
     if (gs.cd > 0) return;
     
     initAudio(); playShot();
-    gs.ammo--; gs.cd = weapon.fireRate;
+    gs.ammo--; 
+    weapon.currentClip = gs.ammo; // تحديث الذخيرة في المخزون
+    gs.cd = weapon.fireRate;
     updateAmmoUI();
-    
-    shake = weapon.fireRate < 10 ? 0.08 : 0.06;
+        shake = weapon.fireRate < 10 ? 0.08 : 0.06;
     const ff = document.getElementById('fire-flash');
     ff.style.opacity = '1';
     setTimeout(() => ff.style.opacity = '0', 45);
@@ -2546,7 +2608,8 @@ function shoot() {
     enemies.filter(e => e.alive).forEach(en => {
         const p = en.g.position.clone().add(new THREE.Vector3(0, 1.5, 0)).project(camera);
         const d = Math.sqrt(p.x * p.x + p.y * p.y);
-        const wd = camera.position.distanceTo(en.g.position);        const effectiveAim = weapon.name === 'قناص' ? 0.1 : AIM;
+        const wd = camera.position.distanceTo(en.g.position);
+        const effectiveAim = AIM;
         if (d < effectiveAim && wd < (weapon.name === 'شوتجان' ? 20 : 45) && d < bd) { bd = d; best = en; }
     });
     
@@ -2581,8 +2644,7 @@ function shoot() {
 }
 
 function killEnemy(en) {
-    en.alive = false;
-    sparks(en.g.position.clone().add(new THREE.Vector3(0, 1, 0)), 15, 0xff4400, 0xff8800);
+    en.alive = false;    sparks(en.g.position.clone().add(new THREE.Vector3(0, 1, 0)), 15, 0xff4400, 0xff8800);
     scene.remove(en.g);
     
     gs.score += 40 + gs.wave * 20;
@@ -2595,7 +2657,8 @@ function killEnemy(en) {
     f.appendChild(d);
     setTimeout(() => d.remove(), 2500);
     
-    incrementCombo();    checkAchievements();
+    incrementCombo();
+    checkAchievements();
     
     // ❌ تم إزالة الحصول على الذخيرة من قتل الأعداء
     
@@ -2608,7 +2671,7 @@ function killEnemy(en) {
     if (!enemies.some(e => e.alive)) setTimeout(() => nextWave(), 1800);
 }
 
-// ─ GRENADE SYSTEM ─
+// ─ GRENADE SYSTEM - 3 SECONDS TIMER ─
 const grenades = [];
 let grenadeCount = 3;
 
@@ -2630,8 +2693,7 @@ function throwGrenade() {
         // ⏱️ 3 ثوان = 180 إطار عند 60 فريم/ثانية
         timer: 180,
         exploded: false
-    };
-    
+    };    
     grenade.mesh.position.copy(grenade.position);
     grenade.mesh.castShadow = true;
     scene.add(grenade.mesh);
@@ -2644,9 +2706,11 @@ function updateGrenades() {
         const g = grenades[i];
         if (!g.exploded) {
             g.position.add(g.velocity);
-            g.velocity.y -= 0.01;            g.mesh.position.copy(g.position);
+            g.velocity.y -= 0.01;
+            g.mesh.position.copy(g.position);
             if (g.position.y <= 0) { g.position.y = 0; g.velocity.y = 0; g.velocity.multiplyScalar(0.2); }
             g.timer--;
+            // ⏱️ الانفجار بعد 3 ثوان بالضبط
             if (g.timer <= 0) explodeGrenade(g);
         }
     }
@@ -2678,8 +2742,7 @@ function explodeGrenade(grenade) {
     grenades.splice(grenades.indexOf(grenade), 1);
     playExplosionSound();
     
-    setTimeout(() => { if (grenadeCount < 3) { grenadeCount++; updateGrenadeUI(); } }, 8000);
-}
+    setTimeout(() => { if (grenadeCount < 3) { grenadeCount++; updateGrenadeUI(); } }, 8000);}
 
 function playExplosionSound() {
     if (!actx) return;
@@ -2693,7 +2756,8 @@ function playExplosionSound() {
     source.connect(gain); gain.connect(actx.destination); source.start();
 }
 
-function updateGrenadeUI() {    const btn = document.getElementById('grenade-btn');
+function updateGrenadeUI() {
+    const btn = document.getElementById('grenade-btn');
     btn.textContent = `💣 ${grenadeCount}`;
     btn.style.opacity = grenadeCount > 0 ? '1' : '0.5';
 }
@@ -2727,14 +2791,17 @@ function resetGame() {
     
     Object.assign(gs, { running: true, hp: 100, maxHp: 100, ammo: 30, reserve: 120, score: 0, wave: 1, kills: 0, reloading: false, cd: 0, camYaw: 0, camPitch: 0, damageBoost: false, speedBoost: false, speedBoostTimer: 0, armorActive: false, armorTimer: 0, movementEnhanced: false, mercenaries: [], mercenaryCount: 0, mercenariesInventory: 0, eliteMercenariesInventory: 0 });
     camera.position.set(0, 1.8, 0);
-    grenadeCount = 3;
-    currentWeapon = 'pistol';
+    grenadeCount = 3;    currentWeapon = 'pistol';
     isFiring = false;
     if (autoFireInterval) { clearInterval(autoFireInterval); autoFireInterval = null; }
     
-    // Reset weapons ownership (keep pistol)
+    // Reset weapons ownership and ammo (keep pistol)
     Object.keys(weapons).forEach(key => {
-        if (key !== 'pistol') weapons[key].owned = false;
+        if (key !== 'pistol') {
+            weapons[key].owned = false;
+            weapons[key].currentClip = weapons[key].clipSize;
+            weapons[key].reserveAmmo = weapons[key].reserve;
+        }
     });
     
     initWeather();
@@ -2742,7 +2809,8 @@ function resetGame() {
     document.getElementById('score-num').textContent = '0';
     document.getElementById('reload-bar').style.display = 'none';
     document.getElementById('maxhp-display').textContent = gs.maxHp;
-        // Reset shop buttons
+    
+    // Reset shop buttons
     Object.keys(weapons).forEach(key => {
         const btn = document.getElementById(`btn-${key}`);
         if (btn) {
